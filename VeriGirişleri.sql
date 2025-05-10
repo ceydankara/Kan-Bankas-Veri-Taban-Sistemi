@@ -26,3 +26,7 @@ INSERT INTO HASTANE (HASTANE_ID, HASTANE_ADI, HASTANE_ADRESI) VALUES
 (8, 'Bahçelievler Medical Park Hastanesi', 'İstanbul, Bahçelievler'),
 (9, 'GATA Haydarpaşa Hastanesi', 'İstanbul, Haydarpaşa, Kadıköy'),
 (10, 'Özel Dünya Göz Hastanesi', 'İstanbul, Bakırköy, Ataköy');
+
+
+-- KAN_BANKASI Tablosu Verisi
+INSERT INTO KAN_BANKASI (KAN_BANKASI_ID, KAN_BANKASI_ADI, KAN_BANKASI_ADRESI ) VALUES (1,'KAN BANKASI','İstanbul');
