@@ -25,12 +25,12 @@ INSERT INTO CINSIYET (CINSIYET_ID, CINSIYET) VALUES
 
 CREATE TABLE HASTANE(
     HASTANE_ID INT PRIMARY KEY,
-    AD VARCHAR(50),
-    ADRES VARCHAR(100)
+    HASTANE_ADI VARCHAR(50),
+    HASTANE_ADRESI VARCHAR(100)
 );
 
 -- HASTANE Tablosu Verisi
-INSERT INTO HASTANE (HASTANE_ID, AD, ADRES) VALUES
+INSERT INTO HASTANE (HASTANE_ID, HASTANE_ADI, HASTANE_ADRESI) VALUES
 (1, 'Acıbadem Hastanesi', 'İstanbul, Kadıköy, Acıbadem Caddesi'),
 (2, 'Memorial Şişli Hastanesi', 'İstanbul, Şişli, Mecidiyeköy'),
 (3, 'Florence Nightingale Hastanesi', 'İstanbul, Beyoğlu, Pera Caddesi'),
