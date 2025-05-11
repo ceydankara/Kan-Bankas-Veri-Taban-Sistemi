@@ -1,1 +1,1 @@
-# Kan-Bankas-Veri-Taban-Sistemi
+# Kan-Bankasi-Veri-Tabani-Sistemi
