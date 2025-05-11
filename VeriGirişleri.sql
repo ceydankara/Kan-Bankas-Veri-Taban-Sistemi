@@ -30,3 +30,13 @@ INSERT INTO HASTANE (HASTANE_ID, HASTANE_ADI, HASTANE_ADRESI) VALUES
 
 -- KAN_BANKASI Tablosu Verisi
 INSERT INTO KAN_BANKASI (KAN_BANKASI_ID, KAN_BANKASI_ADI, KAN_BANKASI_ADRESI ) VALUES (1,'KAN BANKASI','İstanbul');
+-- STOK Tablosu Verisi
+INSERT INTO STOK (STOK_ID, STOK_MIKTARI, KAN_BANKASI_ID, KAN_GRUBU_ID) VALUES
+(1, 0, 1, 1),  -- A+
+(2, 0, 1, 2),  -- A-
+(3, 0, 1, 3),  -- B+
+(4, 0, 1, 4),  -- B-
+(5, 0, 1, 5),  -- AB+
+(6, 0, 1, 6),  -- AB-
+(7, 0, 1, 7),  -- O+
+(8, 0, 1, 8);  -- O-
