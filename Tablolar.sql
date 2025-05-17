@@ -1,18 +1,49 @@
+--KAN_GRUBU Tablosunun oluşturulması
 CREATE TABLE KAN_GRUBU(
     KAN_GRUBU_ID INT  PRIMARY KEY,
     KANGRUBU  VARCHAR(10)
 );
+-- KAN_GRUBU Tablosu Verisi
+INSERT INTO KAN_GRUBU (KAN_GRUBU_ID, KANGRUBU) VALUES
+(1, 'A+'),
+(2, 'A-'),
+(3, 'B+'),
+(4, 'B-'),
+(5, 'AB+'),
+(6, 'AB-'),
+(7, 'O+'),
+(8, 'O-');
 
+--CINSIYET Tablosunun oluşturulması
 CREATE TABLE CINSIYET(
     CINSIYET_ID VARCHAR(5) PRIMARY KEY,
     CINSIYET VARCHAR(10)
 );
 
+-- CINSIYET Tablosu Verisi
+INSERT INTO CINSIYET (CINSIYET_ID, CINSIYET) VALUES
+('K', 'Kadın'),
+('E', 'Erkek');
+
+--HASTANE Tablosunun oluşturulması
 CREATE TABLE HASTANE(
     HASTANE_ID INT PRIMARY KEY,
     HASTANE_ADI VARCHAR(50),
     HASTANE_ADRESI VARCHAR(100)
 );
+
+-- HASTANE Tablosu Verisi
+INSERT INTO HASTANE (HASTANE_ID, HASTANE_ADI, HASTANE_ADRESI) VALUES
+(1, 'Acıbadem Hastanesi', 'İstanbul, Kadıköy'),
+(2, 'Memorial Şişli Hastanesi', 'İstanbul, Şişli'),
+(3, 'Florence Nightingale Hastanesi', 'İstanbul'),
+(4, 'Liv Hospital', 'İstanbul, Ulus'),
+(5, 'Kocaeli Üniversitesi Hastanesi', 'İstanbul, Pendik'),
+(6, 'Medicana International İstanbul', 'İstanbul, Halkalı'),
+(7, 'Amerikan Hastanesi', 'İstanbul, Şişli'),
+(8, 'Bahçelievler Medical Park Hastanesi', 'İstanbul, Bahçelievler'),
+(9, 'GATA Haydarpaşa Hastanesi', 'İstanbul, Haydarpaşa'),
+(10, 'Özel Dünya Göz Hastanesi', 'İstanbul, Bakırköy');
 
 --KAN_BANKASI Tablosunun oluşturulması
 CREATE TABLE KAN_BANKASI(
@@ -20,6 +51,10 @@ CREATE TABLE KAN_BANKASI(
     KAN_BANKASI_ADI VARCHAR(50),
     KAN_BANKASI_ADRESI VARCHAR(50)
 );
+
+-- KAN_BANKASI Tablosu Verisi
+INSERT INTO KAN_BANKASI (KAN_BANKASI_ID, KAN_BANKASI_ADI, KAN_BANKASI_ADRESI ) VALUES (1,'KAN BANKASI','İstanbul');
+
 
 -- HASTALAR Tablosunun oluşturulması
 CREATE TABLE HASTALAR (
@@ -34,8 +69,8 @@ CREATE TABLE HASTALAR (
     FOREIGN KEY (KAN_GRUBU_ID) REFERENCES KAN_GRUBU(KAN_GRUBU_ID),
     FOREIGN KEY (HASTANE_ID) REFERENCES HASTANE(HASTANE_ID)
 );
----- BAGISCILAR TABLOSU OLUŞTURULMASI
 
+-- BAGISCILAR Tablosunun oluşturulması
 CREATE TABLE BAGISCILAR(
     BAGISCI_ID INT PRIMARY KEY,
     BAGISCI_ADI VARCHAR(50),
@@ -50,7 +85,7 @@ CREATE TABLE BAGISCILAR(
     FOREIGN KEY (KAN_BANKASI_ID) REFERENCES KAN_BANKASI(KAN_BANKASI_ID)
 );
 
--- KAN_BAGISI Tablosunun oluşturulması
+-- STOK Tablosunun oluşturulması
 CREATE TABLE STOK(
     STOK_ID INT PRIMARY KEY,
     STOK_MIKTARI INT,
@@ -59,6 +94,19 @@ CREATE TABLE STOK(
     FOREIGN KEY (KAN_BANKASI_ID) REFERENCES KAN_BANKASI(KAN_BANKASI_ID),
     FOREIGN KEY (KAN_GRUBU_ID) REFERENCES KAN_GRUBU(KAN_GRUBU_ID)
 );
+
+-- STOK Tablosu Verisi
+INSERT INTO STOK (STOK_ID, STOK_MIKTARI, KAN_BANKASI_ID, KAN_GRUBU_ID) VALUES
+(1, 0, 1, 1),  -- A+
+(2, 0, 1, 2),  -- A-
+(3, 0, 1, 3),  -- B+
+(4, 0, 1, 4),  -- B-
+(5, 0, 1, 5),  -- AB+
+(6, 0, 1, 6),  -- AB-
+(7, 0, 1, 7),  -- O+
+(8, 0, 1, 8);  -- O-
+
+
 
 -- KAN_BAGISI Tablosunun oluşturulması
 CREATE TABLE KAN_BAGISI(
@@ -71,12 +119,14 @@ CREATE TABLE KAN_BAGISI(
     FOREIGN KEY (KAN_GRUBU_ID) REFERENCES KAN_GRUBU(KAN_GRUBU_ID),
     FOREIGN KEY (STOK_ID) REFERENCES STOK(STOK_ID)
 );
---- KAN TALEBİ TABLOSU OLUSTURULMASI
- CREATE TABLE KAN_TALEBI(
+
+-- KAN_TALEBI Tablosunun oluşturulması
+CREATE TABLE KAN_TALEBI(
     TALEP_ID INT PRIMARY KEY,
     HASTA_ID INT,
     STOK_ID INT,
     FOREIGN KEY (HASTA_ID) REFERENCES HASTALAR(HASTA_ID),
     FOREIGN KEY (STOK_ID) REFERENCES STOK(STOK_ID)
 );
+
 
