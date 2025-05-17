@@ -1,4 +1,5 @@
- --Bağışçı eklendiğinde stokta stok miktarını arttırma trigger'ı
+
+--Bağışçı eklendiğinde stokta stok miktarını arttırma trigger'ı
 CREATE OR REPLACE TRIGGER STOK_ARTTIR_TRIG
 AFTER INSERT ON BAGISCILAR
 FOR EACH ROW
@@ -8,22 +9,14 @@ BEGIN
   WHERE KAN_GRUBU_ID = :NEW.KAN_GRUBU_ID;
 END;
 
---Hasta eklendiğinde stokta stok miktarını azaltma trigger'ı
-CREATE OR REPLACE TRIGGER STOK_AZALT_TRIG
-AFTER INSERT ON HASTALAR
-FOR EACH ROW
-BEGIN
-  UPDATE STOK
-  SET STOK_MIKTARI = STOK_MIKTARI - 1
-  WHERE KAN_GRUBU_ID = :NEW.KAN_GRUBU_ID;
-END;
+-- SEQUENCE bağış yapıldığında iki tabloda sıra belirler
 CREATE SEQUENCE BAGIS_ID_SEQ
-START WITH 1
+START WITH 151
 INCREMENT BY 1
 NOCACHE
 NOCYCLE;
 
--- bagıscı eklendiğinde kan bagısı tablosunu günceller. 
+-- BAGIS_EKLE_TRIG bağış eklendiğinde bağışı stok'a ekler 
 CREATE OR REPLACE TRIGGER BAGIS_EKLE_TRIG
 AFTER INSERT ON BAGISCILAR
 FOR EACH ROW
@@ -41,14 +34,14 @@ BEGIN
     VALUES (BAGIS_ID_SEQ.NEXTVAL, :NEW.BAGISCI_ID, SYSDATE, :NEW.KAN_GRUBU_ID, v_stok_id);
 END;
 
-
--- hasta girildiğinde kan talebi tanlosunu günceller
+-- SEQUENCE hasta eklendiğinde iki tabloda sıra belirler
 CREATE SEQUENCE TALEP_ID_SEQ
 START WITH 1
 INCREMENT BY 1
 NOCACHE
 NOCYCLE;
 
+-- HASTA_TALEP_TRIG hasta eklendiğinde stoktan azaltır 
 CREATE OR REPLACE TRIGGER HASTA_TALEP_TRIG
 AFTER INSERT ON HASTALAR
 FOR EACH ROW
