@@ -516,7 +516,6 @@ ALTER TRIGGER BAGIS_EKLE_TRIG ENABLE;
 
 
 
-
 -- HASTALAR tablosuna veri ekleme işlemleri
 INSERT INTO HASTALAR (HASTA_ID, HASTA_ADI, HASTA_SOYADI, DOGUM_TARIHI, CINSIYET_ID, KAN_GRUBU_ID, HASTANE_ID) 
 VALUES 
@@ -525,16 +524,12 @@ VALUES
  (3,'Mehmet', 'Yıldız', TO_DATE('2003-11-14', 'YYYY-MM-DD'), 'E', 2, 8),
  (4, 'Hasan', 'Şahin', TO_DATE('1999-04-22', 'YYYY-MM-DD'), 'E', 3, 3),
  (5, 'Can', 'Yılmaz', TO_DATE('1966-11-22', 'YYYY-MM-DD'), 'E', 2, 8),
- INSERT INTO HASTALAR (HASTA_ID, HASTA_ADI, HASTA_SOYADI, DOGUM_TARIHI, CINSIYET_ID, KAN_GRUBU_ID, HASTANE_ID) 
-VALUES 
  (6, 'Yusuf', 'Yılmaz', TO_DATE('2003-11-21', 'YYYY-MM-DD'), 'E', 2, 4),
  (7, 'Ali', 'Çelik', TO_DATE('1965-09-19', 'YYYY-MM-DD'), 'E', 1, 8),
  (8, 'Ayşe', 'Koç', TO_DATE('1977-12-30', 'YYYY-MM-DD'), 'K', 5, 8),
  (9, 'Elif', 'Şahin', TO_DATE('1983-04-10', 'YYYY-MM-DD'), 'K', 1, 9),
  (10, 'Can', 'Yıldız', TO_DATE('1958-03-06', 'YYYY-MM-DD'), 'E', 3, 8),
 (11, 'Ali', 'Yıldız', TO_DATE('1979-06-14', 'YYYY-MM-DD'), 'E', 3, 3),
-INSERT INTO HASTALAR (HASTA_ID, HASTA_ADI, HASTA_SOYADI, DOGUM_TARIHI, CINSIYET_ID, KAN_GRUBU_ID, HASTANE_ID) 
-VALUES 
  (12, 'Hasan', 'Çelik', TO_DATE('1995-01-24', 'YYYY-MM-DD'), 'E', 3, 3),
  (13, 'Zeynep', 'Yılmaz', TO_DATE('2005-08-27', 'YYYY-MM-DD'), 'K', 1, 5),
  (14, 'Fatma', 'Demir', TO_DATE('1977-11-26', 'YYYY-MM-DD'), 'K', 2, 9),
@@ -549,8 +544,6 @@ VALUES
 (23, 'Fatma', 'Kurt', TO_DATE('1977-02-28', 'YYYY-MM-DD'), 'K', 2, 5),
  (24, 'Hasan', 'Öztürk', TO_DATE('1957-07-02', 'YYYY-MM-DD'), 'E', 7, 1),
  (25, 'Yusuf', 'Çelik', TO_DATE('1960-04-02', 'YYYY-MM-DD'), 'E', 8, 4),
- INSERT INTO HASTALAR (HASTA_ID, HASTA_ADI, HASTA_SOYADI, DOGUM_TARIHI, CINSIYET_ID, KAN_GRUBU_ID, HASTANE_ID) 
-VALUES 
  (26, 'Elif', 'Demir', TO_DATE('1980-08-27', 'YYYY-MM-DD'), 'K', 5, 4),
  (27, 'Ahmet', 'Kurt', TO_DATE('2010-07-13', 'YYYY-MM-DD'), 'E', 2, 7),
  (28, 'Hasan', 'Çelik', TO_DATE('1960-05-19', 'YYYY-MM-DD'), 'E', 2, 8),
@@ -568,8 +561,6 @@ VALUES
  (40, 'Ali', 'Kurt', TO_DATE('1968-04-03', 'YYYY-MM-DD'), 'E', 5, 7),
  (41, 'Ahmet', 'Şahin', TO_DATE('1950-03-04', 'YYYY-MM-DD'), 'E', 4, 4),
  (42, 'Hüseyin', 'Demir', TO_DATE('1971-08-10', 'YYYY-MM-DD'), 'E', 8, 2),
- INSERT INTO HASTALAR (HASTA_ID, HASTA_ADI, HASTA_SOYADI, DOGUM_TARIHI, CINSIYET_ID, KAN_GRUBU_ID, HASTANE_ID) 
-VALUES 
  (43, 'Fatma', 'Arslan', TO_DATE('1987-01-01', 'YYYY-MM-DD'), 'K', 5, 8),
  (44, 'Ahmet', 'Kaya', TO_DATE('2010-12-23', 'YYYY-MM-DD'), 'E', 8, 8),
  (45, 'Fatma', 'Öztürk', TO_DATE('1974-04-20', 'YYYY-MM-DD'), 'K', 4, 9),
@@ -588,8 +579,6 @@ VALUES
 (58, 'Hüseyin', 'Öztürk', TO_DATE('1984-10-23', 'YYYY-MM-DD'), 'E', 2, 7),
 (59, 'Ayşe', 'Yılmaz', TO_DATE('1992-03-17', 'YYYY-MM-DD'), 'K', 6, 3),
 (60, 'Can', 'Demir', TO_DATE('1979-09-11', 'YYYY-MM-DD'), 'E', 7, 1),
-INSERT INTO HASTALAR (HASTA_ID, HASTA_ADI, HASTA_SOYADI, DOGUM_TARIHI, CINSIYET_ID, KAN_GRUBU_ID, HASTANE_ID) 
-VALUES 
 (61, 'Zeynep', 'Kurt', TO_DATE('1985-05-09', 'YYYY-MM-DD'), 'K', 5, 5),
 (62, 'Hakan', 'Aydın', TO_DATE('1980-11-14', 'YYYY-MM-DD'), 'E', 3, 6),
 (63, 'Fatma', 'Şahin', TO_DATE('1994-07-21', 'YYYY-MM-DD'), 'K', 2, 2),
@@ -610,8 +599,6 @@ VALUES
 (78, 'Yusuf', 'Kılıç', TO_DATE('1983-01-01', 'YYYY-MM-DD'), 'E', 3, 9),
 (79, 'Neşe', 'Çelik', TO_DATE('1987-02-22', 'YYYY-MM-DD'), 'K', 4, 4),
 (80, 'Burak', 'Tan', TO_DATE('1979-03-30', 'YYYY-MM-DD'), 'E', 5, 5),
-INSERT INTO HASTALAR (HASTA_ID, HASTA_ADI, HASTA_SOYADI, DOGUM_TARIHI, CINSIYET_ID, KAN_GRUBU_ID, HASTANE_ID) 
-VALUES 
 (81, 'Sibel', 'Uçar', TO_DATE('1985-04-17', 'YYYY-MM-DD'), 'K', 6, 7),
 (82, 'İsmail', 'Ateş', TO_DATE('1976-05-01', 'YYYY-MM-DD'), 'E', 7, 1),
 (83, 'Selin', 'Özkan', TO_DATE('1991-06-06', 'YYYY-MM-DD'), 'K', 1, 8),
@@ -623,8 +610,6 @@ VALUES
 (89, 'Betül', 'Ergin', TO_DATE('1986-12-03', 'YYYY-MM-DD'), 'K', 7, 5),
 (90, 'Kadir', 'Sağlam', TO_DATE('1975-01-15', 'YYYY-MM-DD'), 'E', 1, 7),
 (91, 'Nurgül', 'Güneş', TO_DATE('1990-02-18', 'YYYY-MM-DD'), 'K', 2, 2),
-INSERT INTO HASTALAR (HASTA_ID, HASTA_ADI, HASTA_SOYADI, DOGUM_TARIHI, CINSIYET_ID, KAN_GRUBU_ID, HASTANE_ID) 
-VALUES 
 (92, 'Meryem', 'İnce', TO_DATE('1983-04-05', 'YYYY-MM-DD'), 'K', 4, 6),
 (93, 'Onur', 'Bayraktar', TO_DATE('1978-05-19', 'YYYY-MM-DD'), 'E', 5, 3),
 (94, 'Hüseyin', 'Arslan', TO_DATE('2006-01-29', 'YYYY-MM-DD'), 'E', 6, 5),
@@ -633,7 +618,6 @@ VALUES
 (97, 'Hüseyin', 'Kaya', TO_DATE('1974-02-28', 'YYYY-MM-DD'), 'E', 5, 8),
 (98, 'Ahmet', 'Demir', TO_DATE('1977-02-01', 'YYYY-MM-DD'), 'E', 7, 9),
 (99, 'Elif', 'Öztürk', TO_DATE('1975-04-22', 'YYYY-MM-DD'), 'K', 4, 1);
-
 
 INSERT INTO BAGISCILAR VALUES (151, 'Ceyda', 'Ankara', 'İstanbul, Pendik', '0555000151', 3, 'K', 1);
 
